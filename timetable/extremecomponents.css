@@ -1,0 +1,361 @@
+#ext {width:100%;}
+
+#ec {
+	margin:0;
+	padding:0;
+	font-size:12px;
+	clear:both;
+	font-family: verdana, arial, helvetica, sans-serif;
+	background:url(../../table/tabletopMiddle1.png) repeat-x 0 0;
+}
+
+#ec .hiddeninput {
+	height:24px;
+	background:url(../../table/tabletopLeft1.png) no-repeat 0 0;
+}
+
+.eXtremeTable {
+	position:relative;
+	padding:8px;
+	padding-bottom:15px;
+	line-height:100%;
+	border:solid 1px #004c81;
+	border-width:0 1px 1px 1px;
+	background:url(../../table/tfoot.png) repeat-x 0 bottom #edf8ff;
+	z-index:98;
+}
+
+.ectoptable {
+	width:100%;
+	position:absolute;
+	right:-17px !important;
+	right:19px;
+	top:-24px;
+	background:url(../../table/tabletopRight1.png) no-repeat right 0;
+}
+
+:root .ectoptable {
+	width:200px;
+	position:absolute;
+	left:10px;
+	top:-24px;
+	z-index:99;
+	background: none;
+}
+.ectoptable span {
+	margin-left:-10px;
+}
+
+* html .ectoptable span {
+	position:static;
+}
+
+*+html .ectoptable span {
+	position:absolute;
+		left:55px;
+		top:33px;
+}
+
+* html .ectoptable span {
+	position:static;
+}
+
+table.toolbar {
+	margin-top:25px;}
+	
+:root table.toolbar {
+		margin-left:200px;
+	margin-top:25px;}	
+
+#ec_table {
+	position:relative;
+	margin:auto;
+	border:solid 1px #21afcd;
+	margin-top:30px;
+	background:#fff;
+}
+
+#ec_table table {
+	padding:2px;
+}
+
+.eXtremeTable select {
+	border: solid 1px #EEE;
+	width: 75px;
+}
+
+.eXtremeTable .tableRegion {
+	border: 1px solid silver;
+	padding: 2px;
+}
+
+.eXtremeTable .filter {
+}
+
+.eXtremeTable .filter td {
+	padding: 2px;
+}
+
+.eXtremeTable .title {
+	color: #ce680e;
+	font-weight: bold;
+	font-size: 18px;
+	line-height:26px;
+	vertical-align: middle;
+	float:left;
+	white-space:nowrap;
+	padding:30px 0 0 0 !important;
+	padding:21px 0 0 0;
+}
+
+.eXtremeTable .titleRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .titleRow td {
+	border-bottom: 1px solid #308dbb;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.eXtremeTable .titleRow span {
+	color: #444444;
+	font-weight: bold;
+}
+
+.eXtremeTable .ecfilter40 input {
+	width:40px;
+}
+
+.eXtremeTable .ecfilter50 input {
+	width:50px;
+}
+		
+.eXtremeTable .ecfilter80 input {
+	width:80px;
+}
+		
+.eXtremeTable .ecfilter100 input {
+	width:100px;
+}
+		
+.eXtremeTable .ecfilter150 input {
+	width:150px;
+}
+
+.eXtremeTable .filter input {
+	width:98%;
+	border: solid 1px grey;
+	padding: 1px;
+	border:solid 1px #b9b38e;
+	height:19px;
+	line-height:19px;
+	background:url(../../table/input_bg.png) no-repeat 0 0;
+}
+
+.eXtremeTable .filter select {
+	width:98%;
+	border:solid 1px #b9b38e;
+	height:22px;
+}
+
+.eXtremeTable .tableHeader,
+.eXtremeTable .tableHeaderSort {
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	margin: 0px;
+	padding: 0 3px;
+	line-height:22px;
+	white-space:nowrap;
+}
+
+.eXtremeTable .tableHeader {
+	border: solid 1px #21afcd;
+	background:url(../../table/thead.png) repeat-x #2e86c1;
+}
+
+.eXtremeTable .tableHeader input {
+	margin:4px 3px !important;
+	margin:0;
+}
+
+.eXtremeTable .tableHeaderSort {
+	border: solid 1px #21cda7;
+	background:url(../../table/theadsort.png) repeat-x #0da08d;
+}
+
+.eXtremeTable .tableBody a {
+	color:#ce9191;
+	text-decoration:none;
+}
+
+.eXtremeTable .tableBody td {
+	padding: 4px 3px;
+	vertical-align: middle;
+	color:#555;
+	border-bottom:solid #bdd8e1 1px;
+}
+
+.eXtremeTable .odd {
+	background-color: #FFFFFF;
+	border-bottom:solid #bdd8e1 1px;
+}
+
+.eXtremeTable .even {
+  	background-color: #e7f3f7;
+}
+
+.eXtremeTable input {
+	margin:0;
+	padding:0;
+	border:1px;
+}
+
+.eXtremeTable td.checkbox input,
+.eXtremeTable td.checkbox label {
+	margin:auto;
+}
+
+.eXtremeTable td.checkbox label {
+	width:0;
+	height:14px;
+	display:block;
+}
+
+.eXtremeTable td.checkbox input {
+	height:0;
+}
+
+.eXtremeTable .highlight td {
+	color:#fff;
+	vertical-align: middle;
+	background-color: #21afcd;
+	border-bottom:solid #3ba3b9 1px;
+}
+
+.eXtremeTable .highlight a {
+	color:#f3e7c6;
+	text-decoration:underline;
+}
+
+.eXtremeTable .highlight a:hover {
+	color:#dbf3c6;
+}
+
+.eXtremeTable .highlight td.operation,
+.eXtremeTable .highlight td.operation a {
+	color:#d3e5f9;
+}
+
+.eXtremeTable .highlight td.main,
+.eXtremeTable .highlight td.main a {
+	color:#b6f4b5;
+}
+
+.eXtremeTable td.operation,
+.eXtremeTable td.operation a {
+	color:#377ac6;
+}
+
+.eXtremeTable td.operation a:hover {
+	color:#eade76;
+}
+
+.eXtremeTable td.main,
+.eXtremeTable td.main a {
+	color:#0f7c6e;
+}
+
+.eXtremeTable td.main a:hover {
+	color:#fc0;
+}
+
+.eXtremeTable .compactToolbar {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .toolbar {
+	font-size: 9px;
+	margin-right: 1px;
+}
+
+.eXtremeTable .toolbar a:hover {
+	background-color: transparent;
+}
+
+.eXtremeTable .toolbar td {
+	color: #444;
+	padding: 0px 3px 0px 3px;
+	text-align:center;
+}
+
+.eXtremeTable .toolbar select {
+	border:solid 1px #3c96d1;
+}
+
+.eXtremeTable .separator {
+	width: 7px;
+}
+
+.eXtremeTable .statusBar {
+}
+
+.eXtremeTable .filterButtons {
+	text-align: right;
+}
+
+.eXtremeTable .title span {
+	margin-left: 7px;
+}
+
+.eXtremeTable .formButtons {
+	display: block;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.eXtremeTable .formButton {
+	cursor: pointer;
+	font-size:10px;
+	font-weight: bold;
+	background-color: #308dbb;
+	color: white;
+	margin-top: 5px;
+	border: outset 1px #333;
+	vertical-align: middle;
+}
+
+.eXtremeTable .calcRow {
+	background-color: #F4F4F4;
+}
+
+.eXtremeTable .calcTitle {
+	background-color: #F4F4F4;
+	color: black;
+	font-weight: bold;
+}
+
+.eXtremeTable .calcResult {
+	background-color: #F4F4F4;
+	color: black;
+}
+
+
+
+/*  ------------------------------------------------
+	ec_table ul.ui menu
+	- - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+	#ec_table ul.ui ul {width:auto;}
+	#ec_table ul.ui li {float:left;position:relative; z-index:998;}
+	#ec_table ul.ui li a {padding:4px;}
+	#ec_table ul.ui li a:hover {background-position:0 0;}
+	#ec_table ul.ui li ul {display:none;}
+	
+	#ec_table ul.ui li:hover ul {display:block; position:absolute; right:0; top:17px; z-index:999; background:#b3f0ff; border:solid 1px #2288aa;}
+	#ec_table ul.ui li:hover ul a {display:block;padding:4px; color:#08647b;}
+	#ec_table ul.ui li:hover ul a:hover {color:#BA4710;}

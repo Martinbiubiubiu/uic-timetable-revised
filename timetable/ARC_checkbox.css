@@ -1,0 +1,61 @@
+/* For a ARC checkbox */
+.checkboxOff,
+.checkboxOn {
+	display: inline;
+	margin: 0px;
+	padding: 2px; /* NS 6 problem */
+	padding-left: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	border: 0px;
+}
+/* Off state for a ARC checkbox */
+.checkboxOff {
+	color: #666;
+	background-image: url(checkbox_off.png);
+}
+/* On state for a ARC checkbox */
+.checkboxOn {
+	color: #000;
+	background-image: url(checkbox_on.png);
+}
+/* use CSS to full effect with hover states. Ohhh, perty! */
+.checkboxOn:hover {
+	background-image: url(checkbox_on_hover.png);
+}
+.checkboxOff:hover {
+	background-image: url(checkbox_off_hover.png);
+}
+
+
+/* Off state for a ARC checkbox */
+.altCheckboxOff {
+	display: inline;
+	padding: 20px 2px; /* NS 6 problem */
+	padding-left: 70px;
+	color: #666;
+	line-height: 60px;
+	font-family: "Courier New", Courier, mono;
+	font-size: 1.2em;
+	background-image: url(alt_checkbox_off.gif);
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	border: 0px;
+	cursor: pointer;
+}
+/* On state for a ARC checkbox */
+.altCheckboxOn {
+	display: inline;
+	padding: 20px 2px; /* NS 6 problem */
+	padding-left: 70px;
+	color: #000;
+	line-height: 60px;
+	font-family: "Courier New", Courier, mono;
+	font-size: 1.2em;
+	font-weight: bold;
+	background-image: url(alt_checkbox_on.gif);
+	background-repeat: no-repeat;
+	background-position: 0% 50%;
+	border: 0px;
+}

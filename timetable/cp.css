@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+#cp_main {
+	z-index: 990;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+#cp_main #cp_bg {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	left:0;
+	top:0;
+	filter:alpha(opacity=50);   /* IE */
+	-moz-opacity:0.5;           /* Moz + FF */
+	opacity: 0.5;          		/* CSS3（or For FF 1.5）*/
+	background-color:#000;
+	position: fixed;
+	z-index: 990;
+}
+
+#cp_main #cp_content {
+	width: 550px;
+	border: 5px #99E3D1 solid;
+	position:absolute;
+	background-color:#FFF;
+	z-index: 999;
+}
+
+#cp_main #cp_content div #cpm_head{
+	padding: 5px;
+	font-size: 18px;
+	font-weight:bold;
+	text-align: left;
+	background:#C4F7EC;
+}
+#cp_main #cp_content div #cpm_body{
+	text-align: left;
+	background:#FFFFFF;
+	width:  320px;
+	height: 130px;
+	margin: auto;
+	margin-top: 20px;
+}
+#cp_main #cp_content div #cpm_body{
+	width: 400px;
+	text-align: left;
+	padding: 15px;
+	font-size: 18px;
+}
+#cp_main #cp_content div #cpm_foot{
+	text-align: center;
+}
+
+#cp_main #cp_content div table{
+	border-collapse:0;
+	border-spacing:0;
+	border: solid 1px #CCDAF8;
+	width: 550px;
+	margin: auto;
+	/*background: #CCDAF8;*/
+	padding: 3px;
+}
+
+#cp_main #cp_content div table .tips{
+	color: #8E3E1C;
+	font-size: 12px;
+}
+
+#cp_main #cp_content div table caption{
+	padding: 4px;
+	font-size: 18px;
+	font-weight:bold;
+	text-align: left;
+	background:#C4F7EC;
+	cursor:move;
+}
+
+#cp_main #cp_content div table .th{
+	width: 160px;
+	background: #EDF2FC;
+	text-align: right;
+	font-weight:bold;
+}
+
+#cp_main #cp_content div table tr{
+	background: #FFFFFF;
+	text-align:left;
+}
+#cp_main #cp_content div table input{
+	width: 200px;
+}
+
+#cp_main #cp_content div table .action{
+	text-align: center;
+}
+
+#cp_main #cp_content div table button{
+	margin-left: 10px;
+}

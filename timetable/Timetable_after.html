@@ -1,0 +1,3365 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>My Timetable UIC MIS</title>
+
+
+
+ 
+
+
+
+
+<style>
+	.ig { background-color: rgba(96,172,252,0.4) }  
+	.eco { background-color: rgba(146,135,231,0.4) }   
+	.lsu { background-color: rgba(91,196,159,0.4) }   
+	.hf { background-color: rgba(254,182,77,0.4) }   
+	.sselt { background-color: rgba(255,124,124,0.4) }   
+
+  </style>
+
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="keywords" content="UIC,MIS" />
+<meta http-equiv="description" content="UIC MIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="./ARC_checkbox.css" rel="stylesheet" type="text/css" />
+<link href="./web.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="/mis/Skins/UIC/css/ie.css" />
+<![endif]-->
+<link href="./loginpage.css" rel="stylesheet" type="text/css" />
+<link href="./demo_page.css" rel="stylesheet" type="text/css" />
+<link href="./jquery.dataTables.css" rel="stylesheet" type="text/css" />		
+<script src="./jquery-1.4.2.min.js" type="text/javascript"></script>
+<!-- 
+<script src="/portal/widget/portal_mis.js" type="text/javascript"></script>
+ -->
+<script src="./mootools.js"></script>  
+<script src="./visiting.js"></script>
+<script src="./yahoo-min.js"></script>
+<script src="./get-min.js"></script>
+<script src="./ARC.js"></script>
+<script src="./jquery.dataTables.js" type="text/javascript"></script>
+<script>
+var show_message_ctx = '/mis';
+var isSubmited = false;
+function doSubmit(action) {
+	if(isSubmited==false){
+		isSubmited=true;
+		var form = $('ec');
+		var action = action || form.action;
+		loadingMessage();
+		form.action = action;
+		form.submit(); 
+	}else{
+		alert("The form is submitted. Please wait.");
+	}
+}
+function doSubmits(action) {
+	var form = $('ec');
+	var action = action || form.action;
+	loadingMessage();
+	form.action = action;
+	form.submit();
+}
+function doSubmitsByType(action,type) {
+	var form = $('ec');
+	var action = action || form.action;
+	if(type != "Download"){
+		loadingMessage();
+	}
+	
+	form.action = action;
+	form.submit();
+}
+
+
+function confirmSubmit(action,msg) {
+	if(confirm(msg)){
+		doSubmit(action);
+	}
+}
+function doLocation(msg, url){
+	if(msg==null||msg==''){
+		msg = "Are you sure?";
+	}
+	if(url!=null){
+		if(window.confirm(msg)){
+			location = url;
+		}
+		return false;
+	}else{
+		return window.confirm(msg);
+	}
+}
+function checkedAll(name){
+	var elements = document.getElementsByName(name);
+	for(var i = 0; i < elements.length; i++){
+		elements[i].checked = true;
+	}
+}
+function checkedInverse(name){
+	var elements = document.getElementsByName(name);
+	for(var i = 0; i < elements.length; i++){
+		if(elements[i].checked == true){
+			elements[i].checked = false;
+		}else{
+			elements[i].checked = true;
+		}
+	}
+}
+</script>
+<script src="./dom-drag.js"></script>
+<script src="./cp_ldap.js"></script>
+<script src="./show_message.js"></script>
+<style type="text/css" media=print>
+.noprint{display:none;}
+</style>
+<script src="./jquery-1.7.1.min.js" type="text/javascript"></script>
+<link href="./timetable.css" rel="stylesheet" type="text/css" />
+<style type="">
+	
+</style>
+<script>
+jQuery(document).ready(function(){
+	$("#semesterList").change(function(){
+		console.log($(this).val());
+		location.href = "./timetable.do?semesterId=" + $(this).val();
+		console.log($(this).val());
+	});
+})
+</script>
+
+</head>
+
+<body>
+<div id="body" class="st">
+<div id="web">
+<div class="web">
+	<div id="header">
+		<div class="topbar">
+			<ul class="ui">
+				<li class="item1"><a href="./Timetable_after2.html">Change</a></li>
+				<li class="item2"><a href="./Timetable.html">Back</a></li>
+			</ul>
+		</div></div>
+	<div id="main">
+	<div class="content">
+    <div class="myprofle2">
+            <dl class="ui">
+            	<dt>My Profile</dt>
+            	<dd class="photo"><img src="./photos/member.png" alt="photo" /></dd>
+                <dd class="studentid">Student ID: <span>2130016073</span></dd>
+                <dd class="name">Name: <span>严堉桐 YAN Yutong</span></dd>
+                <dd class="programme">Programme: <span>APSY</span></dd>
+                <dd class="year">Year: <span>4</span></dd>
+            </dl>
+        </div>
+	<hr style="page-break-before: always; border:none;color:#fff;background:#fff;" />
+	<div class="titleDiv">
+	    <h1 id="title">My Timetable - Improved version 1</h1>
+	    
+		    <div id="semesterListDiv">
+		    Semester: <select id="semesterList">
+		    	
+		    		<option value="ff80808175e49e8c0175f7c298740e81"
+		    			
+		    		 >Winter Study of 2024-2025</option>
+		    	
+		    		<option value="ff80808175e466fc0175f7c2dd050e02"
+		    			
+		    				selected = "selected"
+		    			
+		    		 >Semester 2 of 2024-2025</option>
+		    	
+		    		<option value="ff80808175e49e8c0175f7c31ddc0e82"
+		    			
+		    		 >Summer Study of 2024-2025</option>
+		    	
+		    </select>
+		    </div>
+	    
+    </div>
+    <div id="timetable">
+	<table cellspacing="0" id="mytimetable">
+    	<tr>
+        	<th class="socketfirst" >Time</th>
+            <th class="sockettop" >Mon</th>
+            <th class="sockettop" >Tue</th>
+            <th class="sockettop" >Wed</th>
+            <th class="sockettop" >Thu</th>
+            <th class="sockettop" >Fri</th>
+            <th class="sockettop" >Sat</th>
+            <th class="sockettop" >Sun</th>
+		</tr>
+        
+        <tr>
+        	<th class="socketleft" >
+				8:00 - 8:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace sselt" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Skills and Strategies for English Language Testing (1001)<br />
+		            	T7-304<br />
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >9:00 - 9:50</th>
+            
+            <td class="socketspace ig" >
+	            
+	            	
+		            	
+		            	Promoting Social Inclusion through Intergenerational Programming (1001)<br />
+		            	T29-401<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace sselt" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Skills and Strategies for English Language Testing (1001)<br />
+		            	T7-304<br />
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >10:00 - 10:50</th>
+            
+            <td class="socketspace ig" >
+	            
+	            	
+		            	
+		            	Promoting Social Inclusion through Intergenerational Programming (1001)<br />
+		            	T29-401<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace eco" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Ecological Psychology (1001)<br />
+		            	T29-405<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace lsu" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Listen and Speak Up (1003)<br />
+		            	T7-604<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >11:00 - 11:50</th>
+            
+            <td class="socketspace hf" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Special Topic in Psychology: Human Factors and Ergonomics (1001)<br />
+		            	T7-203<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace eco" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Ecological Psychology (1001)<br />
+		            	T29-405<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace lsu" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Listen and Speak Up (1003)<br />
+		            	T7-604<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >12:00 - 12:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >13:00 - 13:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace lsu" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Listen and Speak Up (1003)<br />
+		            	T6-405<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace sselt" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Skills and Strategies for English Language Testing (1001)<br />
+		            	T7-304<br />
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >14:00 - 14:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >15:00 - 15:50</th>
+            
+            <td class="socketspace eco" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Ecological Psychology (1001)<br />
+		            	T5-505<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace hf" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Special Topic in Psychology: Human Factors and Ergonomics (1001)<br />
+		            	T7-303<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace ig" >
+	            
+	            	
+	            
+	            	
+		            	
+		            	Promoting Social Inclusion through Intergenerational Programming (1001)<br />
+		            	T5-202<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >16:00 - 16:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace hf" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+		            	Special Topic in Psychology: Human Factors and Ergonomics (1001)<br />
+		            	T7-303<br />
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >17:00 - 17:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >18:00 - 18:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >19:00 - 19:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >20:00 - 20:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >21:00 - 21:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+        <tr>
+        	<th class="socketleft" >22:00 - 22:50</th>
+            
+            <td class="socketspace" >
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+		            	
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+            <td class="socketspace" >
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            
+	            	
+	            &nbsp;
+            </td>
+            
+        </tr>
+        
+    </table>
+	<table width="90%" align="center"class="tablestyle-2">
+    	<thead>
+		<tr>
+			<th colspan="9">Sections</th>
+		</tr>
+        </thead>
+        <tbody>
+		<tr>
+			<th>&nbsp;</th>
+			<th>Course Category</th>
+			<th>Course Code</th>
+            <th>Name</th>
+            <th>Teachers</th>
+            <th>Time</th>
+            <th>Room</th>
+            <th>Units</th>
+            <!-- <th>Type</th> -->
+            <th>Remark</th>
+        </tr>
+        
+		<tr>
+			<th>1</th>
+			<!--  
+			<td align="left">
+				
+	            	GE2021<br/>
+	            
+	            	GE2021<br/>
+	            
+			</td>
+			-->
+			<td align="left" class="ig">
+				GE2021
+			</td>
+			<td align="left" class="ig">GCAP3153</td>
+			<td align="left" class="ig">Promoting Social Inclusion through Intergenerational Programming (1001)</td>
+            <td align="left" class="ig">Dr. Alan Wai-Lun LAI</td>
+            <td align="left" class="ig">
+				
+	            	Mon 9:00-10:50<br/>
+	            
+	            	Fri 15:00-15:50<br/>
+	            
+			</td>
+            <td align="left" class="ig">
+	            
+	            	T29-401<br/>
+	            
+	            	T5-202<br/>
+	            
+            </td>
+            <td align="left" class="ig">3.0</td>
+            <!-- <td align="left">GE2021</td> -->
+            <td align="left" class="ig"><span class="red"></span></td>
+        </tr>
+        
+		<tr>
+			<th>2</th>
+			<!--  
+			<td align="left">
+				
+	            	ME<br/>
+	            
+	            	ME<br/>
+	            
+			</td>
+			-->
+			<td align="left" class="eco">
+				ME
+			</td>
+			<td align="left" class="eco">PSY4093</td>
+			<td align="left" class="eco">Ecological Psychology (1001)</td>
+            <td align="left" class="eco">Dr. Alan Wai-Lun LAI</td>
+            <td align="left" class="eco">
+				
+	            	Wed 10:00-11:50<br/>
+	            
+	            	Mon 15:00-15:50<br/>
+	            
+			</td>
+            <td align="left" class="eco">
+	            
+	            	T29-405<br/>
+	            
+	            	T5-505<br/>
+	            
+            </td>
+            <td align="left" class="eco">3.0</td>
+            <!-- <td align="left">ME</td> -->
+            <td align="left" class="eco"><span class="red"></span></td>
+        </tr>
+        
+		<tr>
+			<th>3</th>
+			<!--  
+			<td align="left">
+				
+	            	FE<br/>
+	            
+	            	FE<br/>
+	            
+			</td>
+			-->
+			<td align="left" class="lsu">
+				FE
+			</td>
+			<td align="left" class="lsu">ENG3803</td>
+			<td align="left" class="lsu">Listen and Speak Up (1003)</td>
+            <td align="left" class="lsu">Mr. Jonathan Tyler AUSTIN</td>
+            <td align="left" class="lsu">
+				
+	            	Fri 10:00-11:50<br/>
+	            
+	            	Tue 13:00-13:50<br/>
+	            
+			</td>
+            <td align="left" class="lsu">
+	            
+	            	T7-604<br/>
+	            
+	            	T6-405<br/>
+	            
+            </td>
+            <td align="left" class="lsu">3.0</td>
+            <!-- <td align="left">FE</td> -->
+            <td align="left" class="lsu"><span class="red"></span></td>
+        </tr>
+        
+		<tr>
+			<th>4</th>
+			<!--  
+			<td align="left">
+				
+	            	ME<br/>
+	            
+	            	ME<br/>
+	            
+			</td>
+			-->
+			<td align="left" class="hf">
+				ME
+			</td>
+			<td align="left" class="hf">PSY40338003</td>
+			<td align="left" class="hf">Special Topic in Psychology: Human Factors and Ergonomics (1001)</td>
+            <td align="left" class="hf">Dr. Ghee Wee HO</td>
+            <td align="left" class="hf">
+				
+	            	Thu 15:00-16:50<br/>
+	            
+	            	Mon 11:00-11:50<br/>
+	            
+			</td>
+            <td align="left" class="hf">
+	            
+	            	T7-303<br/>
+	            
+	            	T7-203<br/>
+	            
+            </td>
+            <td align="left" class="hf">3.0</td>
+            <!-- <td align="left">ME</td> -->
+            <td align="left" class="hf"><span class="red"></span></td>
+        </tr>
+        
+		<tr>
+			<th>5</th>
+			<!--  
+			<td align="left">
+				
+	            	FE<br/>
+	            
+	            	FE<br/>
+	            
+			</td>
+			-->
+			<td align="left" class="sselt">
+				FE
+			</td>
+			<td align="left" class="sselt">ENG3293</td>
+			<td align="left" class="sselt">Skills and Strategies for English Language Testing (1001)</td>
+            <td align="left" class="sselt">Mr. Samuel Francis GATES</td>
+            <td align="left" class="sselt">
+				
+	            	Tue 8:00-9:50<br/>
+	            
+	            	Thu 13:00-13:50<br/>
+	            
+			</td>
+            <td align="left" class="sselt">
+	            
+	            	T7-304<br/>
+	            
+	            	T7-304<br/>
+	            
+            </td>
+            <td align="left" class="sselt">3.0</td>
+            <!-- <td align="left">FE</td> -->
+            <td align="left" class="sselt"><span class="red"></span></td>
+        </tr>
+        
+        </tbody>
+	</table>
+	</div>
+	</div>
+    </div>
+	<div id="footer"><span style="font-size: 11px;">Best viewed in 1024×768 with Microsoft Internet Explorer 7.0 and Firefox 3.0 or above</span>
+<span class="copyright">Copyright&copy; UIC . All Rights Reserved.</span>
+<script>
+window.addEvent('domready', function(){ 
+	showMessage('', '');
+}); 
+</script></div>
+</div>
+</div>
+</div>
+
+<script language="javascript"> 
+var layout=request('layout'); 
+document.getElementsByTagName('body')[0].className = document.getElementsByTagName('body')[0].className + ' ' + layout;
+</script>
+
+</body>
+</html>

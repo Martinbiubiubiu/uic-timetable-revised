@@ -1,0 +1,241 @@
+/*
+ * YOOtheme CSS file
+ *
+ * @author yootheme.com
+ * @copyright Copyright (C) 2007 YOOtheme Ltd. & Co. KG. All rights reserved.
+ */ 
+
+
+
+.content h2 {margin:12px 0;color:#F48040;}
+.content h3 {margin:10px 0;color:#66AB3D;}
+
+
+.color_red {color:#c00;}
+.color_blue {color:#36f;}
+.color_orange {color:#f30;}
+.color_gray {color:#999;}
+
+a.icon-folder 		{padding-left: 17px;background: url(../typography/icon_folder.png) 0 40% no-repeat #e2f7ff;}
+a.icon-folder:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_folder.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-file 		{padding-left: 17px;background: url(../typography/icon_file.png) 0 40% no-repeat #e2f7ff;}
+a.icon-file:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_file.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-word 		{padding-left: 17px;background: url(../typography/icon_word.png) 0 40% no-repeat #e2f7ff;}
+a.icon-word:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_word.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-powerpoint 		{padding-left: 17px;background: url(../typography/icon_powerpoint.png) 0 40% no-repeat #e2f7ff;}
+a.icon-powerpoint:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_powerpoint.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-excel 		{padding-left: 17px;background: url(../typography/icon_excel.png) 0 40% no-repeat #e2f7ff;}
+a.icon-excel:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_excel.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-download 	{padding-left: 17px;background: url(../typography/icon_download.png) 0 40% no-repeat #e2f7ff;}
+a.icon-download:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_download.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-link 	{padding-left: 17px;background: url(../typography/icon_link.png) 0 40% no-repeat #e2f7ff;}
+a.icon-link:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_link.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-external 	{padding-left: 17px;background: url(../typography/icon_external.png) 0 40% no-repeat #e2f7ff;}
+a.icon-external:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/icon_external.png) 0 40% no-repeat #fef6d7;}
+
+a.icon-pdf			{padding-left: 17px;background: url(../typography/pdf_button.png) 0 40% no-repeat #e2f7ff;}
+a.icon-pdf:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/pdf_button.png) 0 40% no-repeat #fef6d7;}
+
+span.icon-email			{padding-left: 17px;background: url(../typography/email_go.png) 0 40% no-repeat #e2f7ff;}
+span.icon-email:hover	{border-bottom: solid 1px #f2dda7;background: url(../typography/email_go.png) 0 40% no-repeat #fef6d7;}
+
+/*
+ * emphasis
+ */
+
+em.box { 
+	padding: 0px 4px 0px 4px;
+	background: #e6e9eb;
+	border-bottom: 1px dotted #646464;
+	font-style: normal;
+}
+
+/*
+ * unsorted lists
+ */
+
+ul.arrow,
+ul.checkbox,
+ul.check,
+ul.star {
+	margin: 10px 0px 10px 0px;
+	padding-left: 5px;
+	list-style: none;
+}
+
+ul.arrow li,
+ul.checkbox li,
+ul.check li,
+ul.star li {
+	margin: 5px 0px 5px 0px;
+	padding-left: 35px;
+	/*font-weight: bold;*/
+	line-height: 26px;  
+}
+
+ul.arrow li { background: url(../typography/list_arrow.png) 0 0 no-repeat; }
+ul.checkbox li { background: url(../typography/list_checkbox.png) 0 0 no-repeat; }
+ul.check li { background: url(../typography/list_check.png) 0 0 no-repeat; }
+ul.star li { background: url(../typography/list_star.png) 0 0 no-repeat; }
+
+/*
+ * unsorted lists list-style
+ */
+ul.bullet_red {list-style:url(../typography/bullet_red.png);}
+
+
+/*
+ * ordered lists
+ */
+
+ol.disc {
+	margin: 10px 0px 10px 0px;
+	padding: 0px 0px 0px 45px;
+	background: url(../typography/list_disc.png) 20px 0px repeat-y;
+}
+
+ol.disc li {
+	margin: 5px 0px 5px 0px !important;
+	margin: 5px 0px 5px 6px;
+	padding-left: 10px;
+	/*font-weight: bold;*/
+	line-height: 26px;  
+}
+
+/*
+ * horizontal rule
+ */
+ 
+hr.dotted {
+	margin: 15px 0px 15px 0px;
+	display: block;
+	background: url(../typography/line_dotted.png) 0 0 repeat-x;
+	height: 1px;
+	border: none;
+}
+
+/*
+ * highlighted div and span tags
+ */
+
+span.note,
+span.info,
+span.alert,
+span.download,
+span.tip {
+	display: block;
+}
+
+div.note, span.note {
+	margin: 10px 0px 10px 0px;
+	padding: 5px 10px 5px 10px;
+	background: #f4f5f6;
+	border-top: 1px dotted #aab4be;
+	border-bottom: 1px dotted #aab4be;
+	text-align:justify;
+}
+
+div.info, span.info,
+div.alert, span.alert,
+div.download, span.download,
+div.tip, span.tip {
+	margin: 10px 0px 10px 0px;
+	padding: 8px 10px 8px 35px;
+}
+
+div.info, span.info {
+	background: #f4f5f6 url(../typography/box_info.png) 3px 5px no-repeat;
+	border-top: 1px dotted #aab4be;
+	border-bottom: 1px dotted #aab4be;
+}
+
+div.alert, span.alert {
+	background: #fff5eb url(../typography/box_alert.png) 3px 5px no-repeat;
+	border-top: 1px dotted #ffb4a0;
+	border-bottom: 1px dotted #ffb4a0;
+}
+
+div.download, span.download {
+	background: #f5faeb url(../typography/box_download.png) 3px 5px no-repeat;
+	border-top: 1px dotted #78be5a;
+	border-bottom: 1px dotted #78be5a;
+}
+
+div.tip, span.tip {
+	background: #fffdeb url(../typography/box_tip.png) 3px 5px no-repeat;
+	border-top: 1px dotted #ffc864;
+	border-bottom: 1px dotted #ffc864;
+}
+
+/*
+ * p tag with dropcaps
+ */
+ 
+p.dropcap:first-letter {
+	display: block;
+	margin: 7px 4px 0px 0px;
+	float: left;
+	font-size: 280%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/*
+ * blockquotes
+ */
+
+q.blockquote {
+	display: block;
+}
+
+q.blockquote {
+	margin: 10px 0px 10px 15px;
+	padding: 0px 0px 0px 0px;
+	font-style: italic;
+	font-size: 130%
+}
+
+q.blockquote:before,
+q.blockquote:after {
+  content: "";
+}
+
+blockquote:first-letter,
+q.blockquote:first-letter,
+blockquote.quotation p:first-letter {
+	font-size: 150%
+}
+
+blockquote.quotation {
+	margin: 10px 0px 10px 0px;
+	padding: 10px 35px 10px 35px;
+	border: none;
+	background: url(../typography/blockquote_start.png) 0 0 no-repeat;
+	text-align:justify;
+}
+
+blockquote.quotation p {
+	margin: 0px -35px -10px 0px;
+	padding: 0px 35px 10px 0px;
+	background: url(../typography/blockquote_end.png) 100% 100% no-repeat;
+}
+
+/*
+ * floating boxes
+ */
+
+body .inset-left {
+	margin: 15px 15px 10px 0px;
+	float: left;
+}
+
+body .inset-right {
+	margin: 15px 0px 10px 15px;
+	float: right;
+}

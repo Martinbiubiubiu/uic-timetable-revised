@@ -1,0 +1,95 @@
+/* ------------------------------------------
+	Form Style
+   ------------------------------------------ */
+
+	/* Style 1 */
+	.formstyle1 input,
+	.fawn input,
+	.content input.formstyle1,
+	.content input.fawn {
+		border:solid 1px #b9b38e;
+		background:url(../input_bg.png) no-repeat 0 0;}
+
+	.formstyle1 button,
+	.fawn button,
+	.content button.formstyle1,
+	.content button.fawn {
+		margin-right:4px;
+		border:solid 1px #b9b38e;
+		background:url(../bntbg3.png) no-repeat 0 0;}
+
+	.formstyle1 textarea,
+	.fawn textarea,
+	.content textarea.formstyle1,
+	.content textarea.fawn {
+		border:solid 1px #b9b38e;
+		background:url(../input_bg1.png) no-repeat 0 0 #fffdf0;}
+
+	.formstyle1 select,
+	.fawn select,
+	.content select.formstyle1,
+	.content select.fawn {
+		border:solid 1px #b9b38e;
+		background:url(../input_bg1.png) no-repeat 0 0 #fffdf0;}
+
+
+	/* Style 2 */
+	.formstyle2 input,
+	.blue input,
+	.content input.formstyle2,
+	.content input.blue {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0;}
+
+	.formstyle2 button,
+	.fawn button,
+	.content button.formstyle2,
+	.content button.blue {
+		margin-right:4px;
+		border:solid 1px #8fb9e1;
+		background:url(../bntbg3.png) no-repeat 0 0;}
+
+	.formstyle2 textarea,
+	.blue textarea,
+	.content textarea.formstyle2,
+	.content textarea.blue {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0 #fffdf0;}
+
+	.formstyle2 select,
+	.blue select,
+	.content select.formstyle2,
+	.content select.blue {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0 #fffdf0;}
+
+
+	/* Style 3 */
+	.formstyle3 input,
+	.red input,
+	.content input.formstyle3,
+	.content input.red {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0;}
+
+	.formstyle3 button,
+	.red button,
+	.content button.formstyle3,
+	.content button.red {
+		margin-right:4px;
+		border:solid 1px #8fb9e1;
+		background:url(../bntbg3.png) no-repeat 0 0;}
+
+	.formstyle3 textarea,
+	.red textarea,
+	.content textarea.formstyle3,
+	.content textarea.red {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0 #fffdf0;}
+
+	.formstyle3 select,
+	.red select,
+	.content select.formstyle3,
+	.content select.red {
+		border:solid 1px #8fb9e1;
+		background:url(../input_bg2.png) no-repeat 0 0 #fffdf0;}

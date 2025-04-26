@@ -1,0 +1,174 @@
+
+/*  -------------------------------------------------------------
+	Login Layout
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+		/*  Layout
+			- - - - - - - - - - - - - - - - - - - - -  */
+
+		body.loginbg  {
+			margin:0;
+			padding:0;
+			background:#fcfefc;}
+
+		.loginbg #web {
+			width:100%;
+			height:630px;
+			margin-top:40px;
+			background:url(../img/loginpage_bg_2013.png) center center no-repeat;}
+
+		.loginbg .web {
+			width:100%;
+			height:630px;
+			margin:auto;}
+
+		.loginpage .web {
+			background:url(../img/loginpage_midd_pic.jpg) center 130px no-repeat;}
+
+		.loginbg .inner {
+			width:100%;}
+
+		.loginpage .inner {
+			background:url(../img/loginpage_midd.png) center 130px no-repeat;}
+	
+		* html .loginpage div.inner {
+			background:none;}
+
+		.loginbg .top {
+			width:1000px;
+			height:130px;
+			margin:auto;
+			font-size:10px;
+			position:relative;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			color:#8c9592;}
+
+			
+		.loginbg .top .logotitle {
+			width:630px;
+			height:60px;
+			padding-left:220px;
+			font:bold 48px/110% Verdana, Arial, Helvetica, sans-serif;
+			color:#032e37;
+			position:absolute;
+			left:110px;
+			top:35px;
+			background:url(../img/loginpage_uiclogo.png) no-repeat;}
+		
+		.loginbg .hello {
+			width:70%;
+			padding-top:105px;
+			text-align:right;
+			float:left;}
+
+		.loginbg .toptool {
+			width:30%;
+			padding-top:105px;
+			float:left;}
+
+		.loginbg .toptool ul {padding-left:30px;}
+
+		.loginbg .toptool ul li {float:left; margin:0;padding:0 10px; }
+
+		.loginbg .content {
+			width:1140px;
+			height:357px;
+			margin:auto;}
+
+		.loginpage_in .content {}
+		.loginpage_in .content ul {}
+		.loginpage_in .content ul li {width:200px; height:356px;float:left;}
+
+		* html .loginbg div.top {
+			width:1280px;}
+	
+		* html .loginbg div.content {
+			padding-left:280px;
+			background:none;}
+	
+		* html .loginpage div.content {
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='http://mis.uic.edu.hk/skins/uic/img/loginpage_midd.png');}
+		
+		.loginbg .content form {
+			width:470px;
+			padding-top:44px;
+			color:#7c8d90;
+			float:right;
+			position:relative; /* For IE 6 */}
+		
+		.loginpage_in .content {}
+		.loginpage_in .content ul { }
+		.loginpage_in .content ul li {width:180px;position:relative;padding-left:10px;}
+		.loginpage_in .content ul li a {display:block;width:180px;height:240px; color:#000;padding-top:116px;padding-left:10px;text-align:center;text-decoration:none;background:url(../img/loginpage_pic_bg.png) no-repeat 20px 96px;}
+		.loginpage_in .content ul li span {display:block;}
+
+		.loginpage_in .content ul li.mis {}
+		.loginpage_in .content ul li.mis a {height:220px;padding-top:136px;}
+		.loginpage_in .content ul li.mis a span {padding-top:19px;}
+		.loginpage_in .content ul li.email {}
+		.loginpage_in .content ul li.ispace a {height:230px;padding-top:126px;}
+		.loginpage_in .content ul li.ispace a span {padding-top:11px;}
+		.loginpage_in .content ul li.contactlist a {}
+		.loginpage_in .content ul li.contactlist a span {padding-top:11px;}
+		.loginpage_in .content ul li.diary {}
+		.loginpage_in .content ul li.diary a span {padding-top:11px;}
+
+		.loginpage_in .content ul li a:hover {position:absolute;background:url(../img/loginpage_pic_bg_hover_2013.png) no-repeat}
+
+		.loginpage_in .content ul li.mis a:hover,
+		.loginpage_in .content ul li.email a:hover,
+		.loginpage_in .content ul li.ispace a:hover,
+		.loginpage_in .content ul li.contactlist a:hover,
+		.loginpage_in .content ul li.diary a:hover {width:200px;left:10px; padding-left:0px;;top:0;}
+		
+		* html .loginbg .content form {
+			width:540px;}
+		
+		.loginbg .input_name,
+		.loginbg .input_pw {height:51px;}
+		
+		.loginbg .input_name span,
+		.loginbg .input_pw span { width:95px; padding-right:10px;display:block; float:left;font-size:16px; text-align:right;}
+		
+		.loginbg .input_name input,
+		.loginbg .input_pw input {float:left;width:260px;height:20px;margin-right:0; margin-left:10px; padding:10px;border:0; font-size:16px;line-height:20px;background:url(../img/loginpage_input.jpg) no-repeat;}
+		
+		.loginbg .login_other {margin-left:112px;}
+
+
+		/*  login other
+			- - - - - - - - - - - - - - - - - - - - -  */
+		
+		.loginbg #footer {
+		height:		65px;
+		margin-top:	50px;
+		padding-top:30px;
+		clear:		both;
+		font-size:	14px;
+		text-align:	center;
+		color:		#8babaf;}
+		
+		.loginbg #footer  span {margin-top:5px;}
+
+		.loginbg #footer .small {font-size:11px;color:#999; display:block;}
+
+	/*  login other
+		- - - - - - - - - - - - - - - - - - - - -  */
+	.logintop {width:100%;height:35px; clear:both;text-align:center;position:fixed;left:0;top:0;background:url(/skins/uic/loginpage_topbg.png) repeat-x 0 -95px; z-index:9999;}
+	.logintopclose {width:100%;height:35px; clear:both;text-align:center;position:fixed;left:0;top:0;z-index:9999;}
+	* html,* html body /* ����IE6��bug */{background-image:url(about:blank);background-attachment:fixed;}
+	* html .logintop,
+	* html .logintopclose /* IE6 ͷ���̶� */{position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop));}
+	.logintop ul {width:830px; margin:auto;list-style:none;}
+	.logintop li {float:left; margin-right:20px;}
+	.logintop li a {height:30px;line-height:30px; padding-right:10px; font-size:12px; text-decoration:none;}
+	.logintop li img {height:20px; padding:5px 2px 0 0; float:left;}
+	
+	.logintopclose ul {display:none;}
+
+	.controlco {position:absolute;top:0; right:0;margin:2px 5px 0 0; padding:2px 4px;border:solid 1px #c5e8e1;}
+	.controlco .close,
+	.controlco .open {width:40px;padding-left:16px;display:block;}
+	.controlco .close {background:url(/mis/Skins/UIC/icon/silk_icons/door_out.png) no-repeat;}
+	.controlco .open {background:url(/mis/Skins/UIC/icon/soft/backward.png) no-repeat;}
+

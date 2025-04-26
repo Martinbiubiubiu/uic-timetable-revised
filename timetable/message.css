@@ -1,0 +1,70 @@
+@charset "utf-8";
+body {position:relative;}
+#message_show{
+	z-index: 990;
+	position:absolute;
+	left:0;
+	top:0;
+	
+}
+.message_bg {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	left:0;
+	top:0;
+	filter:alpha(opacity=50);   /* IE */
+	-moz-opacity:0.5;           /* Moz + FF */
+	opacity: 0.5;          		/* CSS3（or For FF 1.5）*/
+	background-color:#000;
+	position: fixed;
+	z-index: 991;
+}
+.message_main {
+	width: 400px;
+	height: 200px;
+	border: 5px #99E3D1 solid;
+	position:absolute;
+	background-color:#FFF;
+	z-index: 999;
+}
+
+.message_main .span{
+	margin-left: 15px;
+}
+
+.message_main .head_type {
+	width: 16px;
+	height: 16px;
+}
+
+.message_main .message_head{
+	padding: 10px;
+	height: 18px;
+	font-size: 16px;
+	color: #41B5ED;
+	font-weight:bold;
+	background-color: #EDF2FC;
+	cursor:move;
+	/*background-image:url(../icon/mini_icons/login_bg.gif);*/
+}
+
+.message_main .close {
+	float: right;
+	cursor: pointer !important;
+	cursor: hand;
+}
+
+.message_main .message_body{
+	font-size: 14px;
+	background-color: #FFF;
+	margin: auto;
+	width: 80%;
+}
+.message_main .message_foot{
+	text-align:center;
+	margin: auto;
+}
+.message_main button{
+	width: 60px;
+}

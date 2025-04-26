@@ -1,0 +1,387 @@
+/* ------------------------------------------
+	Table Style
+   ------------------------------------------ */
+
+		table caption {
+			text-align:left;
+			padding:5px 0;
+			font-weight:bold;}
+
+
+		/* Table Globals */
+		table table,
+		table.tablestyle-1,
+		table.tablestyle-2,
+		table.tablestyle-3,
+		table.tablestyle-4,
+		table.tablestyle-10,
+		table.tablestyle-report {
+			border-spacing: 0px;
+			border-collapse: collapse;}
+
+		table td,
+		table th {
+			padding:4px 8px;
+			vertical-align:top;}
+
+		table img {
+			vertical-align:middle;}
+
+		/* Table Style 1(Gray) */
+
+		table.tablestyle-1 {}
+
+		table.tablestyle-1,
+		table.tablestyle-1 td,
+		table.tablestyle-1 th {
+			border:solid #999 1px;}
+
+		table.tablestyle-1 thead th,
+		table.tablestyle-1 thead td {
+			font-weight:bold;
+			background:#eaeaea;}
+
+		table.tablestyle-1 th {
+			font-weight:bold;
+			background:#F3F3F3;}
+
+		table.tablestyle-1 .title {
+			border-top:solid 5px #aaa;
+			background:#eee;}
+
+		table.tablestyle-1 td.bg_blue {
+			background:#6cc5ef;}
+
+		table.tablestyle-1 td.bg_yellow {
+			background:#f4f42a;}
+
+		table.tablestyle-1 td.bg_red {
+			background:#ff3600;}
+
+		table.tablestyle-1 td.bg_green {
+			background:#39d180;}
+
+		table.tablestyle-1 td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+
+		table.tablestyle-1 tfoot td {
+			border:0;}
+
+		
+		
+		/* Table Style 2(Blue) */
+		table.tablestyle-2 {}
+
+		table.tablestyle-2,
+		table.tablestyle-2 td,
+		table.tablestyle-2 th,
+		table.tablestyle-2 tfoot {
+			border:solid #7ba1c7 1px;}
+
+		table.tablestyle-2 thead th {
+			color:#405f7f;
+			background:url(./photos/bg_blue.png) repeat-x #d7e3f7;}
+
+		table.tablestyle-2 thead td {
+			background:#d7e3f7;}
+
+		table.tablestyle-2 th {
+			font-weight:bold;
+			background:#f0f5fd;}
+
+		table.tablestyle-2 .title {
+			border-top:solid 5px #3973ad;
+			background:#b7cdf1;}
+
+/*		table.tablestyle-2 {
+			border-width:1px 0 0 1px;}*/
+
+		table.tablestyle-2 td {
+			border-width:0 1px 1px 0;}
+
+		table.tablestyle-2 td.bg_blue {
+			background:#6cc5ef;}
+
+		table.tablestyle-2 td.bg_yellow {
+			background:#f4f42a;}
+
+		table.tablestyle-2 td.bg_red {
+			background:#ff3600;}
+
+		table.tablestyle-2 td.bg_green {
+			background:#39d180;}
+
+		table.tablestyle-2 td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+
+		table.tablestyle-2 tfoot th,
+		table.tablestyle-2 tfoot td {
+			border:0;}
+
+
+		/* Table Style Report(Blue) */
+		table.tablestyle-report table {
+			border-spacing: 0px;
+			border-collapse: collapse;}
+
+		table.tablestyle-report {
+			padding-top:10px;}
+
+		table.tablestyle-report {
+			border:solid #606060 2px;
+			height:auto; 
+			font-family:Times New Roman;}
+			
+		table.tablestyle-report td {
+			vertical-align:middle;
+			border-bottom:solid 1px #CDDCE2;
+			line-height: 13px;}
+
+		table.tablestyle-report thead th {
+			border-bottom:solid #3973ad 1px;
+			background:url(./photos/bg_blue.png) repeat-x #d7e3f7;}
+
+		table.tablestyle-report thead td {
+			border-bottom:solid #3973ad 1px;
+			background:#d7e3f7;}
+
+		table.tablestyle-report th {
+			font-weight:bold;
+			vertical-align:middle;
+			border-top:solid #3973ad 1px;
+			border-bottom:solid 1px #CDDCE2;
+			background:#e7effa;}
+			
+
+		table.tablestyle-report .topline th {
+			border-top:solid 5px #3973ad;
+			border-bottom:none;}
+
+		table.tablestyle-report .topline td {
+			border-top:solid 5px #3973ad;
+			border-bottom:none;}
+			
+		table.tablestyle-report .title th {
+			border-top:solid 5px #3973ad;
+			background:#b7cdf1;}
+
+		table.tablestyle-report .title td {
+			border-top:solid 5px #3973ad;
+			background:#e7effa;}
+
+
+		table.tablestyle-report tr.noborder th,
+		table.tablestyle-report tr.noborder td {
+			border-top:none;
+			border-bottom:none;}
+
+		table.tablestyle-report td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+		
+		table.tablestyle-report .tablespace {
+			background:#C1F7E1;}
+
+		table.tablestyle-report .botDashed {
+			border-bottom:dashed 1px #3973ad;}
+
+		table.tablestyle-report .nopadding {
+			padding:0;}
+
+		
+		/* Table Style 3(Light Blue) */
+		table.tablestyle-3,
+		table.tablestyle-3 th,
+		table.tablestyle-3 td {
+			border:solid #d4e7fc 1px;}
+
+		table.tablestyle-3 thead th,
+		table.tablestyle-3 thead td {
+			font-weight:bold;
+			background:#e9f3ff;}
+
+		table.tablestyle-3 th {
+			font-weight:bold;
+			background:#f3f8ff;}
+
+		table.tablestyle-3 .title {
+			border-top:solid 5px #3973ad;
+			background:#b7cdf1;}
+
+/*		table.tablestyle-3 {
+			border-width:1px 0 0 1px;}*/
+
+		table.tablestyle-3 td {
+			border-width:0 1px 1px 0;
+			background:#FFFDF7;}
+
+		table.tablestyle-3 td.bg_blue {
+			background:#6cc5ef;}
+
+		table.tablestyle-3 td.bg_yellow {
+			background:#f4f42a;}
+
+		table.tablestyle-3 td.bg_red {
+			background:#ff3600;}
+
+		table.tablestyle-3 td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+
+		
+		/* Table Style 4(Orange) */
+		table.tablestyle-4,
+		table.tablestyle-4 td,
+		table.tablestyle-4 th {
+			border:solid #EDA95F 1px;}
+
+		table.tablestyle-4 thead th,
+		table.tablestyle-4 thead td {
+			font-weight:bold;
+			background:#F9EAB7;}
+
+		table.tablestyle-4 th {
+			font-weight:bold;
+			background:#fcf3d6;}
+
+		table.tablestyle-4 .title {
+			border-top:solid 5px #3973ad;
+			background:#b7cdf1;}
+
+/*		table.tablestyle-4 {
+			border-width:1px 0 0 1px;}*/
+
+		table.tablestyle-4 td {
+			border-width:0 1px 1px 0;}
+
+		table.tablestyle-4 td.bg_blue {
+			background:#6cc5ef;}
+
+		table.tablestyle-4 td.bg_yellow {
+			background:#f4f42a;}
+
+		table.tablestyle-4 td.bg_red {
+			background:#ff3600;}
+
+		table.tablestyle-4 td.bg_green {
+			background:#39d180;}
+
+		table.tablestyle-4 td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+
+		
+		/* Table Style 10 */
+		table.tablestyle-10 {
+			background:#faffff;}
+
+		table.tablestyle-10 caption {
+			height:25px !important;
+			height:24px;
+			margin:0;
+			margin-left:-1px !important;
+			margin-left:0;
+			padding:0 10px;
+			line-height:24px;
+			color:#598888;
+			border:solid 1px #a2cece;
+			border-width:0 1px;
+			white-space:nowrap;
+			background:url(./photos/k_topbg.png) left top repeat-x;}
+		
+		table.tablestyle-10,
+		table.tablestyle-10 td,
+		table.tablestyle-10 th,
+		table.tablestyle-10 tfoot {
+			border:solid #a2cece 1px;}
+
+		table.tablestyle-10 td {
+			border-width:0 1px 1px 0;}
+
+		table.tablestyle-10 thead th {
+			background:url(./photos/k_bg1.png) repeat-x #eafafb;}
+
+		table.tablestyle-10 thead td {
+			background:#eafafb;}
+
+		table.tablestyle-10 th {
+			font-weight:bold;
+			background:#eafafb;}
+
+		table.tablestyle-10 th.side {
+			text-align:left;}
+
+		table.tablestyle-10 .title {
+			border-top:solid 3px #3973ad;
+			background:#b7cdf1;}
+
+/*		table.tablestyle-10 {
+			border-width:1px 0 0 1px;}*/
+
+		table.tablestyle-10 tr.bg0 td {
+			background:#faffff;}
+
+		table.tablestyle-10 tr.bg1 td {
+			background:#f5feff;}
+
+		table.tablestyle-10 tr.bg2 td {
+			background:#effef6;}
+
+		table.tablestyle-10 td.bg_blue {
+			background:#6cc5ef;}
+
+		table.tablestyle-10 td.bg_yellow {
+			background:#f4f42a;}
+
+		table.tablestyle-10 td.bg_red {
+			background:#ff3600;}
+
+		table.tablestyle-10 td.bg_green {
+			background:#39d180;}
+
+		table.tablestyle-10 .border_b {
+			border-bottom:solid 3px #a2cece;}
+
+		table.tablestyle-10 tr.highlight td,
+		table.tablestyle-10 th.highlight,
+		table.tablestyle-10 td.highlight {
+			color:#faffff;
+			cursor:default;
+			background:#0aacaa;}
+
+		table.tablestyle-10 a {
+			cursor:pointer;}
+
+		table.tablestyle-10 tr.highlight a {
+			cursor:pointer;
+			color:#99ff00;}
+
+		table.tablestyle-10 tr.highlight a:hover {
+			color:#ffff00;}
+
+		table.tablestyle-10 td p {
+			margin:0;
+			padding:0;
+			text-indent:0;}
+
+		table.tablestyle-10 tfoot th,
+		table.tablestyle-10 tfoot td {
+			background:#e9f3ff;}
+
+		table.tablestyle-10 .sub {
+			font-size:12px;
+			color:#888;}
+
+		table.tablestyle-10 tr.nil td {
+			background:#f2f9f9;}
+
+
+	td.onborder {border:0;}
+	td.highline {background:#fcfce5;}

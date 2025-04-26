@@ -1,0 +1,273 @@
+/*  -------------------------------------------------------------
+	Menu
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+		
+
+	/*  Top Menu layout
+		- - - - - - - - - - - - - - - - - - - - -  */
+
+	.topmenu {
+		height:auto !important;
+		min-height:36px;
+		height:36px;
+		font-size:12px;
+		margin:10px 0;}
+
+	.topmenu menu {
+		margin:0;
+		padding:0;
+		float:left;
+		list-style:none;
+		border:solid 1px #d3ecf3;
+		background:url(../menu_bg.png) repeat-x;}
+
+	.topmenu li {
+		height:36px;
+		float:left;
+		text-align:center;}
+
+	.topmenu li a {
+		padding:0 10px;
+		line-height:37px;
+		display:block;
+		color:#3c8793;
+		font-weight:bold;
+		white-space:nowrap;
+		text-decoration:none;
+		background:url(../menu_bg_left.png) no-repeat;
+		background-position:0 -94px;}
+
+	.topmenu li.highlight a {
+		color:#fff;
+		background-position:0 -47px;}
+
+	.topmenu li.highlight a:hover {
+		color:#3c8793;}
+
+	.topmenu li.title {
+		margin-right:10px;
+		background:url(../menu_bg_left.png) no-repeat;
+		background-position:0 -142px;}
+
+	.topmenu li.title a,
+	.topmenu li.title a:hover {
+		color:#9e6307;
+		padding-right:25px;
+		background:url(../menu_pic.png) no-repeat right;}
+
+
+	.topmenu li#mycart a {
+		border-right:red solid 1px;}
+
+	.topmenu li a:hover {
+		background-position:0 0;}
+
+	.topmenu li active {
+		background-position:-379px -90px;}
+
+	.child li a {
+		background-position:0 0;}
+
+	.child li a:hover {
+		background-position:-190px 0;}
+
+	.child ul li active {
+		background-position:-379px 0;}
+
+	#bookhome .topbar li.mymenu a,
+	#bookmenu .topbar li.mymenu a,
+	#bookcart .topbar li.mycart a,
+	#bookorder .topbar li.myorder a {
+		background-position:0 0;}
+
+
+	/*  Side Menu layout
+		- - - - - - - - - - - - - - - - - - - - -  */
+	
+	.sidemenu {
+		width:214px;
+		float:left;
+		margin:-24px 0 0 0;
+		margin-left:-206px;
+		position:absolute;
+		left:0;
+		top:0;}
+	
+	.sidemenu menu {
+		width:214px;
+		margin:0;
+		padding:30px 0 0 0;
+		list-style:none;
+		clear:both;
+		background:none;}
+	
+	.sidemenu li {
+		margin-right:9px;
+		border-bottom:solid 1px #c4f1ec;}
+	
+	.sidemenu li a {
+		+width:170px; /* For IE 6 */
+		+float:left; /* For IE 6 */
+		color:#4aa59b;
+		padding-left:35px;
+		display:block;
+		line-height:33px;
+		font-size:13px;
+		font-weight:bold;
+		white-space:nowrap;
+		text-decoration:none;
+		background:url(../sidemenu_bg2.png) no-repeat 0 -71px;}
+	
+	.sidemenu li a:hover {
+		line-height:31px;
+		border-top:solid 1px #abdbe2;
+		border-bottom:solid 1px #46a7ad;
+		background:url(../sidemenu_bg2.png) no-repeat 0 -2px;}
+	
+	.sidemenu li.sub {}
+	
+	.sidemenu li.sub a {
+		background:url(../sidemenu_bg2.png) no-repeat 0 -2px;}
+	
+	.sidemenu .sub ul {
+		margin:0;
+		padding:0;
+		list-style:none;}
+	
+	.sidemenu .sub li {
+		margin:0;
+		padding:0;
+		border-bottom:solid 1px #efefef;}
+	
+	.sidemenu .sub li a {
+		line-height:25px;
+		background:url(../arrow01.gif) no-repeat 15px 8px;}
+	
+	.sidemenu .sub li a:hover {
+		line-height:25px;
+		border-top:none;
+		border-bottom:none;
+		background:url(../arrow01.gif) no-repeat 18px 8px #F7E6CA;}
+
+	.topmenu,
+	.content,
+	#ec,
+	.actionbar {
+/*		margin-left:20px;
+		margin-right:20px;*/
+		margin-left:3%;
+		margin-right:3%;}
+
+	.content .topmenu {
+/*		margin-left:20px;
+		margin-right:20px;*/
+		margin-left:0;
+		margin-right:0;}
+
+	/*  Side Menu Contorl
+		- - - - - - - - - - - - - - - - - - - - -  */
+	div.smcontrol {
+		width:12px;
+		height:50px;
+		float:left;
+		position:absolute;
+		left:205px;
+		top:50%;
+		z-index:101;
+		background:url(../bntarrow.png) no-repeat 0 -140px;}
+
+	div.smcontrol a {
+		width:12px;
+		height:50px;
+		float:left;
+		border:0;
+		background:url(../bntarrow.png) no-repeat 0 -140px;}
+
+	.st div.smcontrol a:hover,
+	div.smcontrol a:hover {
+		background-position:0 -210px;}
+
+
+
+	/* Show Side Menu */
+
+	.st #main {}
+	#main.showsm  {
+		background:url(../sidemenu_rightbg.png) repeat-y 205px 0;}
+
+/*	.st .topmenu,
+	.st .content,
+	.st #ec,
+	.st .actionbar,
+	.st .sidemenu,*/
+	.showsm .sidemenu {
+		margin-left:0;}
+
+	.showsm .topmenu,
+	.showsm .content,
+	.showsm #ec,
+	.showsm .actionbar {
+		margin-left:230px;
+		margin-right:20px;}
+
+	.st #ec,
+	.showsm #ec {
+		margin:20px 20px 0 230px;
+		clear:none;}
+
+	*+html .st .ectoptable span,
+	*+html .showsm .ectoptable span {
+		left:255px;
+		top:33px;}
+	
+	.st .sidemenu menu,
+	.showsm .sidemenu menu {
+		background:url(../sidemenu_top.png) no-repeat right top;}
+
+	.st div.smcontrol a:hover,
+	.showsm div.smcontrol a:hover {
+		background-position:0 -70px;}
+
+	.st div.smcontrol a,
+	.showsm div.smcontrol a {
+		background-position:0 0;}
+
+
+	/*  actionbar layout
+		- - - - - - - - - - - - - - - - - - - - -  */
+	.actionbar {
+		position:relative;
+		margin-top:-10px !important;
+		margin-top:-9px;
+		padding:4px 8px 14px 8px;
+		/*border:solid 1px #a7e6cb;*/
+		border:solid 1px #004c81;
+		border-width:0 1px 1px 1px;
+		background:url(../../table/tfoot.png) repeat-x 0 bottom #edf8ff;
+		/*background:#dff8f0;*/
+		z-index:99;}
+
+	.actionbar button {
+		height:26px !important;
+		height:28px;
+		color:#5d5848;
+		margin-right:4px;
+		font-weight:bold;
+		font-size:12px;
+		font-family:Arial, Helvetica, sans-serif;
+		border:solid 1px #dcc787;
+		background:url(../../UIC/bntbg3.png) repeat-x;}
+		
+	.btn {
+	    height:26px !important;
+		height:28px;
+		color:#5d5848;
+		margin-right:4px;
+		font-weight:bold;
+		font-size:12px;
+		font-family:Arial, Helvetica, sans-serif;
+		border:solid 1px #dcc787;
+		background:url(../../UIC/bntbg3.png) repeat-x;
+}
+
+
