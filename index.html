@@ -1,1 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0036)https://mis.uic.edu.cn/mis/login.jsp -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
+<title>UIC MIS Login Page</title>
+
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="UIC,MIS">
+<meta http-equiv="description" content="UIC MIS">
+
+<!--
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    -->
+
+<link href="./UIC MIS Login Page_files/login1.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="Skins/UIC/css/ie.css" />
+    <![endif]-->
+
+
+<script src="./UIC MIS Login Page_files/prototype.js"></script>
+<script language="javascript">
+	/**
+	 window.onload = function(){
+	        if(window.location.href.indexOf("uic.edu.cn")!=-1){
+		        var tmpTag = 'https:' == document.location.protocol ? false : true;
+		        if(tmpTag){
+		        	var urls = window.location.href;
+			        urls = urls.replace("http", "https");
+			        window.location=urls;
+		        }
+	        }
+	  };
+	  */
+	  
+	  // 移除 doSubmit 函数
+	  function autoSelect(){
+		  var userName = $('j_username');
+		  if(userName.value.length >1){
+			  if(!isNaN(userName.value.substring(1, userName.value.length))){
+				  document.getElementById('student').checked = 'checked';
+				  document.getElementById('user').checked = '';
+				  return;
+				  }
+			  }
+		  document.getElementById('user').checked = 'checked';
+		  document.getElementById('student').checked = '';
+		  }
+	</script>
+</head>
+<body id="login-web">
+	<!-- Login Web -->
+	<div id="web">
+		<div id="wrap">
+			<div id="inner">
+				<div id="login">
+					<div id="login_inner">
+						<form name="loginform" id="loginform">
+							<input type="hidden" name="j_target_url" id="j_target_url" value="/usr/index.do">
+							<div id="login_title"></div>
+							<p align="center">
+								<strong style="color: red; font-size: 26px;"> 
+										
+										
+										
+										Please Login 
+									
+								</strong><br>&nbsp;
+							</p>
+							<div id="input_name">
+								<img src="./UIC MIS Login Page_files/lable_name.png" width="62" height="32">
+								<div>
+									<input type="text" name="j_username" id="j_username" value="2130016073" onblur="autoSelect();">
+								</div>
+							</div>
+							<div id="input_pw">
+								<img src="./UIC MIS Login Page_files/label_pw.png" width="62" height="32">
+								<div>
+									<input type="password" name="j_password" value="**********">
+								</div>
+							</div>
+							<div id="login_other">
+								<div id="di">
+									<input type="radio" name="usertype" id="student" checked><label for="student">Student</label> <input type="radio" name="usertype" id="user"><label for="user">Teacher</label>
+								</div>
+								<div id="reply">
+									<span id="d1">&nbsp;</span>
+								</div>
+								<img src="./UIC MIS Login Page_files/login_bt.png" onclick="window.location.href='./Timetable.html';" style="display: block; margin-left: auto; margin-right: auto;">
+							</div>
+						</form>
+					</div>
+					The login ID and password have been changed to your email ID and password....<br>
+					<br> Best viewed in 1024×768 with Microsoft Internet Explorer 7.0 and Firefox 3.0 or above
+				</div>
+			</div>
+		</div>
+	</div>
+	<script language="javascript">
+	var login_form =document.getElementById('loginform');
+		if (login_form.j_username.value == "") {
+			login_form.j_username.focus();
+		} else {
+			login_form.j_password.focus();
+		}
+	</script>
+
+
+	<!-- Login Web End -->
+
+<div style="z-index: 2147483647 !important; padding: 0px !important; margin: 0px !important; border-radius: 8px !important; position: fixed !important; color-scheme: normal !important; box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px, rgba(0, 0, 0, 0.18) 0px 8px 15px 6px !important; border: 1px solid rgba(0, 0, 0, 0.9) !important; overflow: hidden !important; backdrop-filter: blur(20px) !important; background-color: rgba(35, 35, 35, 0.83) !important; top: 368px !important; left: -999999px !important; opacity: 0 !important; visibility: hidden !important; height: 69.5px !important; width: 305px !important;"><template shadowrootmode="open"><iframe src="chrome-extension://mfbcdcnpokpoajjciilocoachedjkima/completion_list.html?username=&amp;colorScheme=undefined&amp;screenX=0&amp;screenY=38&amp;effectiveWindowWidth=1464.66" frameborder="0" style="width: 305px !important; height: 69.5px !important; display: block !important;"></iframe></template></div></body></html>
