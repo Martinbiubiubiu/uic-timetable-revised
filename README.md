@@ -1,0 +1,1 @@
+uic-timetable-revised is a web improvement demo based on the UIC MIS Timetable by Martinbiubiubiu and his team. we intend to redesign the UIC timetable interface using ecological psychology principles.
